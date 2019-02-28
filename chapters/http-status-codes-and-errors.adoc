@@ -296,7 +296,7 @@ endpoint must return a suitable HTTP status code together with an Error
 JSON Object and the media type `application/json`. The Error JSON must
 be returned whether the failure has been caused by the client or the server
 (i.e. for 4xx as well as for 5xx error codes). The JSON schema definition
-of the Error JSON object can be found here:
+of the Error JSON object is as follows:
 
 [source,json]
 ----
@@ -315,14 +315,14 @@ of the Error JSON object can be found here:
   "properties": {
     "code": {
       "type": "string",
-      "title": "Textual Identifier of Error",
+      "description": "A textual identifier of the error.",
       "examples": [
         "INVALID_INVOICE_AMOUNT"
       ]
     },
     "type": {
       "type": "string",
-      "enum": [
+      "x-extensible-enum": [
         "BAD_REQUEST",
         "UNAUTHORIZED",
         "FORBIDDEN",
@@ -331,31 +331,31 @@ of the Error JSON object can be found here:
         "INTERNAL",
         "METHOD_NOT_ALLOWED"
       ],
-      "title": "Textual Identifier of Error Category",
+      "description": "A textual identifier of the error category.",
       "examples": [
         "BAD_REQUEST"
       ]
     },
     "status": {
       "type": "integer",
-      "title": "HTTP Status Code",
+      "description": "The HTTP status code.",
       "examples": [
         404
       ]
     },
     "message": {
       "type": "string",
-      "title": "Error Message",
+      "description": "The error message.",
       "examples": [
         "Invoice amount cannot be negative or zero."
       ]
     },
     "arguments": {
       "type": "array",
-      "title": "Error Arguments for Interpolation of Localized Error Message",
+      "description": "Error arguments for interpolating the localized error message.",
       "items": {
         "type": "string",
-        "title": "Error Argument for Interpolation of Localized Error Message",
+        "description": "An error argument for interpolating the localized error message.",
         "examples": [
           "100",
           "50"
@@ -364,43 +364,42 @@ of the Error JSON object can be found here:
     },
     "traceId": {
       "type": "string",
-      "title": "Error Correlation ID",
+      "description": "Trace identifier for correlating the error to service interactions.",
       "examples": [
         "avfcsdc28374876234628"
       ]
     },
     "errorDetails": {
       "type": "array",
-      "title": "Error Details",
+      "description": "Error details.",
       "items": {
         "type": "object",
-        "title": "Error Detail",
+        "description": "An error detail.",
         "required": [
           "code",
-          "message",
-          "arguments"
+          "message"
         ],
         "properties": {
           "code": {
             "type": "string",
-            "title": "Textual Identifier of Error",
+            "description": "A textual identifier of the error.",
             "examples": [
               "INVALID_INVOICE_AMOUNT"
             ]
           },
           "message": {
             "type": "string",
-            "title": "Error Message",
+            "description": "The error message.",
             "examples": [
               "Invoice amount cannot be negative or zero."
             ]
           },
           "arguments": {
             "type": "array",
-            "title": "Error Arguments for Interpolation of Localized Error Message",
+            "description": "Error arguments for interpolating the localized error message.",
             "items": {
               "type": "string",
-              "title": "Error Argument for Interpolation of Localized Error Message",
+              "description": "An error argument for interpolating the localized error message.",
               "examples": [
                 "100",
                 "50"
