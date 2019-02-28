@@ -28,7 +28,7 @@ Previously, this guideline allowed the use of custom media types like
 `application/x.zalando.article+json`. This usage is not recommended
 anymore and should be avoided, except where it is necessary for cases of
 <<114,media type versioning>>. Instead, just use the standard media type name
-`application/json` (or `application/problem+json` for <<176>>).
+`application/json`.
 
 Custom media types beginning with `x` bring no advantage compared to the
 standard media type for JSON, and make automated processing more difficult.
