@@ -295,122 +295,91 @@ Whenever the processing of a request fails partially or completely, an
 endpoint must return a suitable HTTP status code together with an Error
 JSON Object and the media type `application/json`. The Error JSON must
 be returned whether the failure has been caused by the client or the server
-(i.e. for 4xx as well as for 5xx error codes). The JSON schema definition
+(i.e. for 4xx as well as for 5xx error codes). The OpenAPI schema definition
 of the Error JSON object is as follows:
 
-[source,json]
-----
-{
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "title": "Error JSON",
-  "required": [
-    "code",
-    "type",
-    "status",
-    "message",
-    "traceId"
-  ],
-  "properties": {
-    "code": {
-      "type": "string",
-      "description": "A textual identifier of the error.",
-      "examples": [
-        "INVALID_INVOICE_AMOUNT"
-      ]
-    },
-    "type": {
-      "type": "string",
-      "x-extensible-enum": [
-        "BAD_REQUEST",
-        "UNAUTHORIZED",
-        "FORBIDDEN",
-        "NOT_FOUND",
-        "CONFLICT",
-        "INTERNAL",
-        "METHOD_NOT_ALLOWED"
-      ],
-      "description": "A textual identifier of the error category.",
-      "examples": [
-        "BAD_REQUEST"
-      ]
-    },
-    "status": {
-      "type": "integer",
-      "description": "The HTTP status code.",
-      "examples": [
-        404
-      ]
-    },
-    "message": {
-      "type": "string",
-      "description": "The error message.",
-      "examples": [
-        "Invoice amount cannot be negative or zero."
-      ]
-    },
-    "arguments": {
-      "type": "array",
-      "description": "Error arguments for interpolating the localized error message.",
-      "items": {
-        "type": "string",
-        "description": "An error argument for interpolating the localized error message.",
-        "examples": [
-          "100",
-          "50"
-        ]
-      }
-    },
-    "traceId": {
-      "type": "string",
-      "description": "Trace identifier for correlating the error to service interactions.",
-      "examples": [
-        "avfcsdc28374876234628"
-      ]
-    },
-    "errorDetails": {
-      "type": "array",
-      "description": "Error details.",
-      "items": {
-        "type": "object",
-        "description": "An error detail.",
-        "required": [
-          "code",
-          "message"
-        ],
-        "properties": {
-          "code": {
-            "type": "string",
-            "description": "A textual identifier of the error.",
-            "examples": [
-              "INVALID_INVOICE_AMOUNT"
-            ]
-          },
-          "message": {
-            "type": "string",
-            "description": "The error message.",
-            "examples": [
-              "Invoice amount cannot be negative or zero."
-            ]
-          },
-          "arguments": {
-            "type": "array",
-            "description": "Error arguments for interpolating the localized error message.",
-            "items": {
-              "type": "string",
-              "description": "An error argument for interpolating the localized error message.",
-              "examples": [
-                "100",
-                "50"
-              ]
-            }
-          }
-        }
-      }
-    }
-  }
-}
+[source,yaml]
+---
+Error:
+  type: object
+  required:
+    - code
+    - type
+    - status
+    - message
+    - traceId
+  properties:
+    code:
+      type: string
+      description: A textual identifier of the error.
+      examples:
+        - INVALID_INVOICE_AMOUNT
+    type:
+      type: string
+      x-extensible-enum:
+        - BAD_REQUEST
+        - UNAUTHORIZED
+        - FORBIDDEN
+        - NOT_FOUND
+        - CONFLICT
+        - INTERNAL
+        - METHOD_NOT_ALLOWED
+      description: A textual identifier of the error category.
+      examples:
+        - BAD_REQUEST
+    status:
+      type: integer
+      description: The HTTP status code.
+      examples:
+        - 404
+    message:
+      type: string
+      description: The error message.
+      examples:
+        - Invoice amount cannot be negative or zero.
+    arguments:
+      type: array
+      description: Error arguments for interpolating the localized error message.
+      items:
+        type: string
+        description: An error argument for interpolating the localized error message.
+        examples:
+          - '100'
+          - '50'
+    traceId:
+      type: string
+      description: Trace identifier for correlating the error to service interactions.
+      examples:
+        - avfcsdc28374876234628
+    errorDetails:
+      type: array
+      description: Error details.
+      items:
+        type: object
+        description: An error detail.
+        required:
+          - code
+          - message
+        properties:
+          code:
+            type: string
+            description: A textual identifier of the error.
+            examples:
+              - INVALID_INVOICE_AMOUNT
+          message:
+            type: string
+            description: The error message.
+            examples:
+              - Invoice amount cannot be negative or zero.
+          arguments:
+            type: array
+            description: Error arguments for interpolating the localized error message.
+            items:
+              type: string
+              description: An error argument for interpolating the localized error message.
+              examples:
+                - '100'
+                - '50'
 ----
 
 [#177]
