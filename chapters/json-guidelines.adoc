@@ -120,27 +120,17 @@ Strings are a reasonable target for values that are by design enumerations.
 
 
 [#126]
-== {SHOULD} Date property values should conform to RFC 3339
+== {MUST} Date and time property values must conform to RFC 3339
 
-Use the date and time formats defined by {RFC-3339}#section-5.6[RFC 3339]:
+For representation of date and/or time use only the following formats defined
+by {RFC-3339}#section-5.6[RFC 3339]:
 
-* for "date" use strings matching
-`date-fullyear "-" date-month "-" date-mday`, for example: `2015-05-28`
-* for "date-time" use strings matching `full-date "T" full-time`, for
-example `2015-05-28T14:07:17Z`
+* for "date" use strings matching RFC `full-date` format, example: `2015-05-28`.
+* for "time" use strings matching RFC `partial-time` format, example `14:07:17`.
+* for "date and time" use strings matching RFC `date-time` format with only UTC zone offset, example `2015-05-28T14:07:17Z`.
 
-Note that the
-https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types[OpenAPI
-format] "date-time" corresponds to "date-time" in the RFC) and
-`2015-05-28` for a date (note that the OpenAPI format "date" corresponds
-to "full-date" in the RFC). Both are specific profiles, a subset of the
-international standard {ISO-8601}[ISO 8601].
-
-A zone offset may be used (both, in request and responses) -- this is
-simply defined by the standards. However, we encourage restricting dates
-to UTC and without offsets. For example `2015-05-28T14:07:17Z` rather
-than `2015-05-28T14:07:17+00:00`. From experience we have learned that
-zone offsets are not easy to understand and often not correctly handled.
+From experience we have learned that zone offsets are not easy to understand
+and often not correctly handled, that's why we stick to UTC.
 Note also that zone offsets are different from local times that might be
 including daylight saving time. Localization of dates should be done by
 the services that provide user interfaces, if required.
@@ -155,6 +145,12 @@ timestamps, but this can introduce interpretation issues with precision
 1460062925000 or 1460062925.000. Date strings, though more verbose and
 requiring more effort to parse, avoid this ambiguity.
 
+Note that the
+https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types[OpenAPI
+format] "date-time" corresponds to "date-time" in the RFC) and
+`2015-05-28` for a date (note that the OpenAPI format "date" corresponds
+to "full-date" in the RFC). Both are specific profiles, a subset of the
+international standard {ISO-8601}[ISO 8601].
 
 [#127]
 == {MAY} Time durations and intervals could conform to ISO 8601
