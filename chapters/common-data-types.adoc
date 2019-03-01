@@ -72,150 +72,75 @@ There are some data fields that come up again and again in API data:
 not numbers. IDs are unique within some documented context, are stable
 and don't change for a given object once assigned, and are never
 recycled cross entities.
-* `xyz_id`: an attribute within one object holding the identifier of
+* `...Id`: an attribute within one object holding the identifier of
 another object must use a name that corresponds to the type of the
 referenced object or the relationship to the referenced object followed
-by `_id` (e.g. `customer_id` not `customer_number`; `parent_node_id` for
+by `Id` (e.g. `businessId` not `businessNumber`; `parentNodeId` for
 the reference to a parent node from a child node, even if both have the
 type `Node`)
-* `created`: when the object was created. If used, this must be a
-`date-time` construct.
-* `modified`: when the object was updated. If used, this must be a
-`date-time` construct.
+* `createdAt`: date-time at which the object was created.
+* `updatedAt`: date-time at which the object was updated.
+* `...At`: any date-time property of the object, both past and future, e.g.
+`disabledAt`, `expiresAt`.
+* `...Date`: any date property of the object, e.g. `reconciliationDate`.
+* `...Time`: any time property of the object, e.g. `deliveryTime`.
+* `status`: status of the object in the system. If used, the type of this field
+must be a string, carrying values of enumeration or <<112, extensible
+enumeration>>. Consider using `status` property instead of boolean flags
+representing status (e.g. `isLocked`, `isFinished`), as the former is more
+extensible and allows easier documentation of all allowed statuses, transitions
+& their consequences.
 * `type`: the kind of thing this object is. If used, the type of this
-field should be a string. Types allow runtime information on the entity
-provided that otherwise requires examining the Open API file.
+field must be a string, carrying values of enumeration or extensible
+enumeration. Types allow runtime information on the entity provided that
+otherwise requires examining the Open API file.
 * `etag`: the <<182, ETag>> of an <<158, embedded sub-resource>>. It may be
   used to carry the {ETag} for subsequent {PUT}/{PATCH} calls (see
   <<etag-in-result-entities>>).
 
-Example JSON schema:
+Example JSON Schema:
 
-[source,json]
+[source,yaml]
 ----
-tree_node:
+treeNode:
   type: object
   properties: 
     id:
       description: the identifier of this node
       type: string
-    created:
-      description: when got this node created
+    createdAt:
+      description: date-time at which this node was created
       type: string
       format: 'date-time'
-    modified:
-      description: when got this node last updated
+    updatedAt:
+      description: date-time at which this node was last updated
       type: string
       format: 'date-time'
+    expiresAt:
+      description: date-time at which this node will expire
+      type: string
+      format: 'date-time'
+    status:
+      type: string
+      enum: [ 'ACTIVE', 'EXPIRED' ]
     type:
       type: string
       enum: [ 'LEAF', 'NODE' ]
-    parent_node_id:
+    parentNodeId:
       description: the identifier of the parent node of this node
       type: string
   example:
     id: '123435'
-    created: '2017-04-12T23:20:50.52Z'
-    modified: '2017-04-12T23:20:50.52Z'
+    createdAt: '2017-04-12T23:20:50.52Z'
+    updatedAt: '2017-04-12T23:20:50.52Z'
+    expiresAt: '2222-04-12T23:20:50.52Z'
+    status: 'ACTIVE'
     type: 'LEAF'
-    parent_node_id: '534321'
+    parentNodeId: '534321'
 ----
 
 These properties are not always strictly necessary, but making them
 idiomatic allows API client developers to build up a common
-understanding of Zalando's resources. There is very little utility for
+understanding of Infinitec's resources. There is very little utility for
 API consumers in having different names or value types for these fields
 across APIs.
-
-[[address-fields]]
-=== Address Fields
-
-Address structures play a role in different functional and use-case
-contexts, including country variances. All attributes that relate to
-address information should follow the naming and semantics defined
-below.
-
-[source,yaml]
-----
-addressee:
-  description: a (natural or legal) person that gets addressed
-  type: object
-  properties:
-    salutation:
-      description: |
-        a salutation and/or title used for personal contacts to some
-        addressee; not to be confused with the gender information!
-      type: string
-      example: Mr
-    first_name:
-      description: |
-        given name(s) or first name(s) of a person; may also include the
-        middle names.
-      type: string
-      example: Hans Dieter
-    last_name:
-      description: |
-        family name(s) or surname(s) of a person
-      type: string
-      example: Mustermann
-    business_name:
-      description: |
-        company name of the business organization. Used when a business is
-        the actual addressee; for personal shipments to office addresses, use
-        `care_of` instead.
-      type: string
-      example: Consulting Services GmbH
-  required:
-    - first_name
-    - last_name
-
-address:
-  description:
-    an address of a location/destination
-  type: object
-  properties:
-    care_of:
-      description: |
-        (aka c/o) the person that resides at the address, if different from
-        addressee. E.g. used when sending a personal parcel to the
-        office /someone else's home where the addressee resides temporarily
-      type: string
-      example: Consulting Services GmbH
-    street:
-      description: |
-        the full street address including house number and street name
-      type: string
-      example: Schönhauser Allee 103
-    additional:
-      description: |
-        further details like building name, suite, apartment number, etc.
-      type: string
-      example: 2. Hinterhof rechts
-    city:
-      description: |
-        name of the city / locality
-      type: string
-      example: Berlin
-    zip:
-      description: |
-        zip code or postal code
-      type: string
-      example: 14265
-    country_code:
-      description: |
-        the country code according to
-        [iso-3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-      type: string
-      example: DE
-  required:
-    - street
-    - city
-    - zip
-    - country_code
-----
-
-Grouping and cardinality of fields in specific data types may vary based
-on the specific use case (e.g. combining addressee and address fields
-into a single type when modeling an address label vs distinct addressee
-and address types when modeling users and their addresses).
-
