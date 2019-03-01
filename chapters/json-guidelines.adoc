@@ -80,10 +80,10 @@ An actual JSON object described by this might then look like this:
 
 
 [#120]
-== {SHOULD} Array names should be pluralized
+== {MUST} Array names must be pluralized
 
-To indicate they contain multiple values prefer to pluralize array
-names. This implies that object names should in turn be singular.
+To indicate they contain multiple values pluralize array
+names. This implies that object names must in turn be singular.
 
 
 [#122]
@@ -110,9 +110,10 @@ property deletion.
 
 
 [#124]
-== {SHOULD} Empty array values should not be null
+== {MUST} Empty array values must not be null
 
-Empty array values can unambiguously be represented as the empty list, `[]`.
+Empty array values must either be represented as the empty list, i.e. `[]`, or removed,
+which is preferable.
 
 
 [#125]
@@ -176,4 +177,3 @@ durations).
 * https://tools.ietf.org/html/bcp47[BCP-47] (based on {ISO-639-1}[ISO 639-1])
   for language variants
 * {ISO-4217}[ISO 4217 currency codes]
-
