@@ -101,21 +101,23 @@ standard header so to say implicitly defined via the security section.
 
 
 [#225]
-== {MUST} Follow Naming Convention for Permissions (Scopes)
+== {MUST} Follow Naming Convention for Permissions
 
 Permission names in APIs must conform to the following naming pattern:
 
 [source,bnf]
 -----
-<permission> ::= <standard-permission> |  -- should be sufficient for majority of use cases
-                 <resource-permission> |  -- for special security access differentiation use cases
-                 <pseudo-permission>      -- used to explicitly indicate that access is not restricted
+<permission> ::= <application>.<resource>.<action>
 
-<standard-permission> ::= <application-id>.<access-mode>
-<resource-permission> ::= <application-id>.<resource-name>.<access-mode>
-<pseudo-permission>   ::= uid
+<application> ::= [a-z][a-z0-9-]*       -- application identifier
+<resource>    ::= [a-z][a-z0-9-]*       -- resource identifier
+<action>      ::= <standard-action> |   -- should be sufficient in most cases
+                  <nonstandard-action>  -- for non-standard cases
 
-<application-id>      ::= [a-z][a-z0-9-]*  -- application identifier
-<resource-name>       ::= [a-z][a-z0-9-]*  -- free resource identifier
-<access-mode>         ::= read | write    -- might be extended in future
+<standard-action>    ::= read | create | update | delete  -- might be extended in the future
+<nonstandard-action> ::= [a-z][a-z0-9-]*
 -----
+
+Standard actions should always be preferred. Nonstandard actions should be used
+sparingly and only when the action doesn't fit semantics of any of the standard
+ones.
