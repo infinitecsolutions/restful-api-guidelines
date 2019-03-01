@@ -116,7 +116,7 @@ Empty array values can unambiguously be represented as the empty list, `[]`.
 
 
 [#125]
-== {SHOULD} Enumerations should be represented as Strings
+== {MUST} Enumerations must be represented as Strings
 
 Strings are a reasonable target for values that are by design enumerations.
 
@@ -176,4 +176,3 @@ durations).
 * https://tools.ietf.org/html/bcp47[BCP-47] (based on {ISO-639-1}[ISO 639-1])
   for language variants
 * {ISO-4217}[ISO 4217 currency codes]
-
