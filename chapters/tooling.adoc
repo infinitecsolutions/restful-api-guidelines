@@ -34,8 +34,6 @@ http://swagger.io/open-source-integrations/[Community-Driven Language Integratio
 
 These utility libraries support you in implementing various parts of our RESTful API guidelines (sorted alphabetically):
 
-* *https://github.com/zalando/problem[Problem]:*
-  Java library that implements application/problem+json
 * *https://github.com/zalando/problem-spring-web[Problems for Spring Web MVC]:*
   library for handling Problems in Spring Web MVC
 * *https://github.com/zalando/jackson-datatype-money[Jackson Datatype Money]:*
