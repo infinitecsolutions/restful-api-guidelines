@@ -27,7 +27,7 @@ limited to:
 * {Content-Type} indicates the media type of the body content.
 
 [#133]
-== {SHOULD} Use Standardized Headers
+== {MUST} Use Standardized Headers
 
 Use standard header names from http://en.wikipedia.org/wiki/List_of_HTTP_header_fields[this list]
 according to their purpose. State usage of standard headers in OpenAPI
