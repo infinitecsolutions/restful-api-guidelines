@@ -331,7 +331,7 @@ original one implementing a well defined behavior. Using {204} without content
 would be a similar well defined option.
 
 [#X001]
-== {SHOULD} Provide PATCH Endpoint Along PUT One
+== {MAY} Provide PATCH Endpoint Along PUT One
 
 For client's convenience provide PATCH endpoint along PUT one, allowing
 selective update of the resource.

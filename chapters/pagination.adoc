@@ -122,7 +122,7 @@ to an article's `authors` like that:
 ----
 
 [#X004]
-== {SHOULD} Return Elements of Listing in `items` Property
+== {MUST} Return Elements of Listing in `items` Property
 
 Use `items` as name of property holding elements of returned listing. This makes
 the general listing response the same regardless of specific listing (modulo
