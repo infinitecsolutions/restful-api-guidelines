@@ -121,3 +121,23 @@ to an article's `authors` like that:
 }
 ----
 
+[#X004]
+== {SHOULD} Return Elements of Listing in `items` Property
+
+Use `items` as name of property holding elements of returned listing. This makes
+the general listing response the same regardless of specific listing (modulo
+elements in the listing). In consequence clients can expect the elements of the
+listing to always be under the same property.
+
+////
+Zalando guidelines are using "items" name for property holding array with
+elements of returned listing - see e.g. 226, 161, 158, appendix C.
+This deviates from what we currently use, e.g. "accounts", "businesses",
+"auditEvents", etc. We should think it this will give us more benefits or cause
+more troubles.
+
+Comments:
+Wilerson: OK
+Andrzej: OK
+Tugce: OK
+////

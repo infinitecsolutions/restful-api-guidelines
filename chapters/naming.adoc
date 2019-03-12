@@ -101,3 +101,21 @@ paginating, you must stick to the following naming conventions:
 * `limit` — client suggested limit to restrict the number of entries on
   a page. See <<pagination>> section below.
 
+[#X003]
+== {SHOULD} Resort to Query-by-Example Query Parameters If Needed
+
+Sometimes the default query parameter `q` mentioned in <<137>> isn't enough to
+fulfill business or technical requirements around filtering. In such cases
+assess if query-by-example using query parameters doesn't meet the
+requirements. If so, name corresponding query parameters according to
+https://github.com/allegro/restapi-guideline#simple-filters-in-query-string[Allegro's guideline].
+
+////
+We can embed relevant fragment of the Allegro guidelines directly here or leave
+the link.
+
+Comments:
+Wilerson: OK
+Andrzej: OK
+Tugce: OK
+////
