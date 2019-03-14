@@ -151,9 +151,8 @@
 :RFC-idempotent: pass:[<a href="https://tools.ietf.org/html/rfc7231#section-4.2.2">idempotent</a>]
 :RFC-cacheable: pass:[<a href="https://tools.ietf.org/html/rfc7231#section-4.2.3">cacheable</a>]
 
-
-= Infinitec RESTful API Guidelines
-Infinitec Solutions GmbH
+:imagesdir: https://infinitec.solutions/wp-content/uploads/2019/03/
+= image:infinitec-solutions-logo.png[Infinitec Solutions,150] RESTful API Guidelines
 
 NOTE: Our Guidelines are an adaptation of the https://github.com/zalando/restful-api-guidelines[Zalando RESTful API and Event Scheme Guidelines]. Their material as well as our adaptation is licensed under link:LICENSE[Creative Commons Attribution 4.0 International]
 
