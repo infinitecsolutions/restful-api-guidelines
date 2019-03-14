@@ -156,8 +156,6 @@
 
 NOTE: Our Guidelines are an adaptation of the https://github.com/zalando/restful-api-guidelines[Zalando RESTful API and Event Scheme Guidelines]. Their material as well as our adaptation is licensed under link:LICENSE[Creative Commons Attribution 4.0 International]
 
-Other formats: link:zalando-guidelines.pdf[PDF], link:zalando-guidelines.epub[EPUB3]
-
 toc::[]
 
 :sectnums:
