@@ -49,7 +49,7 @@ Http headers including the proprietary headers use the
 {RFC-7231}#section-7.1.1.1[HTTP date format defined in RFC 7231].
 
 [#170]
-== {MAY} Use Standards for Country, Language and Currency Codes
+== {MUST} Use Standards for Country, Language and Currency Codes
 
 Use the following standard formats for country, language and currency
 codes:
