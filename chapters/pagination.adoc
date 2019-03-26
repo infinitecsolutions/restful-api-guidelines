@@ -121,7 +121,7 @@ to an article's `authors` like that:
 }
 ----
 
-[#X004]
+[#X002]
 == {MUST} Return Elements of Listing in `items` Property
 
 Use `items` as name of property holding elements of returned listing. This makes

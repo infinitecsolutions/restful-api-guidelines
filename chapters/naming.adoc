@@ -101,19 +101,64 @@ paginating, you must stick to the following naming conventions:
 * `limit` — client suggested limit to restrict the number of entries on
   a page. See <<pagination>> section below.
 
-[#X003]
-== {SHOULD} Resort to Query-by-Example Query Parameters If Needed
+[#X001]
+== {SHOULD} Resort to More Advanced Filtering If Needed
 
 Sometimes the default query parameter `q` mentioned in <<137>> isn't enough to
 fulfill business or technical requirements around filtering. In such cases
-assess if query-by-example using query parameters doesn't meet the
-requirements. If so, name corresponding query parameters according to
-https://github.com/allegro/restapi-guideline#simple-filters-in-query-string[Allegro's guideline].
+assess if query-by-example using query parameters or OData's `$filter` system
+query option doesn't meet the requirements, in that order.
+
+=== Query-by-Example Using Query Parameters
+
+Use a query parameter for each field that should support filtering. Most of the
+fields probably do not provide such support. Therefore, document which fields
+are filterable.
+
+Given an example listing of the following format:
+
+```json
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Infinitec Solutions GMBH",
+      "address": {
+        "street": "Hardenbergstraße 32",
+        "zipCode": "10623",
+        "city": "Berlin",
+        "country": "Germany"
+      }
+    }
+  ]
+}
+```
+
+follow these rules to name the query parameters:
+
+* refer directly to collection items (`name`, not `items.name`),
+* use "." (dot) to indicate a (unique) field name in nested structure
+  (`address.city`, not just `city`).
+
+To support ranges in filtering use virtual fields with suffixes:
+
+* `.gt` - greater than,
+* `.lt` - less than,
+* `.gte` - greater or equal,
+* `.lte` - less or equal.
+
+For example, to allow filtering on `rate` field using ranges (both ends
+inclusive), introduce `rate.gte` and `rate.lte` query parameters.
+
+=== OData `$filter` System Query Option
+
+Use the https://www.odata.org/[OData]'s http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptionfilter[`$filter` system query option]
+to allow the client to restrict the set of items returned.
+
+Document which subset of fields, OData's built-in filter operations & built-in
+query functions is supported by the endpoint.
 
 ////
-We can embed relevant fragment of the Allegro guidelines directly here or leave
-the link.
-
 Comments:
 Wilerson: OK
 Andrzej: OK

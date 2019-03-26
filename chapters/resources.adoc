@@ -226,23 +226,7 @@ sub-resource (nesting) levels -- more levels increase API complexity and url
 path length. (Remember, some popular web browsers do not support URLs of more
 than 2000 characters.)
 
-[#X002]
-== {MAY} Group Resources Under a Prefix
-
-API designers are allowed to place endpoints allowing access to different
-resources under a collective, dedicated prefix, provided that all these
-resources constitute a big, overarching product of the platform that has been
-identified by the product team.
-
-For example `/financial-timeline` can be used as a prefix for all resources from
-the financial domain, forming the "financial timeline" product.
-
-////
-Comments:
-Wilerson: There's domain-level grouping in that case, no?
-////
-
-[#X005]
+[#X003]
 == {MUST} Group Business, Partner and Internal Endpoints on End Services
 
 End services must implement endpoints from different kind of APIs, operating on

@@ -330,20 +330,6 @@ to avoid {200} here unless you make sure, that the delivered resource is the
 original one implementing a well defined behavior. Using {204} without content
 would be a similar well defined option.
 
-[#X001]
-== {MAY} Provide PATCH Endpoint Along PUT One
-
-For client's convenience provide PATCH endpoint along PUT one, allowing
-selective update of the resource.
-
-////
-Comments:
-Wilerson: Don't know: I'm a fan of the spirit of this proposition, not sure
-    about the feasibility
-Andrzej: OK
-Gilberto: OK
-////
-
 [#154]
 == {SHOULD} Define Collection Format of Query Parameters and Headers
 
