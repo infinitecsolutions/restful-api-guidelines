@@ -225,3 +225,37 @@ collection resource of the subresource entities. You should use <= 3
 sub-resource (nesting) levels -- more levels increase API complexity and url
 path length. (Remember, some popular web browsers do not support URLs of more
 than 2000 characters.)
+
+[#X003]
+== {MUST} Group Business, Partner and Internal Endpoints on End Services
+
+End services must implement endpoints from different kind of APIs, operating on
+the same resources. For example a service exposing operations on businesses
+might have the business resources available:
+
+* on business gateway;
+* on partner gateway;
+* in internal API.
+
+These different APIs can return different data for the same resource, support
+different query parameters and so forth. For example:
+
+* `/businesses` endpoint on business API gateway can return
+business-user-accessible information;
+* `/businesses` endpoint on partner API gateway can return more data compared
+to the endpoint on business API gateway (but still not all) and support
+different filters than its counterpart on business API gateway;
+* internal `/businesses` endpoint can return all data that is available,
+supporting additional filters that are not available in APIs exposed by both
+API gateways.
+
+Therefore, use common prefixes for endpoints on end services belonging to
+different sets of APIs:
+
+* `/api` for business APIs -- e.g. `/api/businesses` end service endpoint
+mapped to `/businesses` on business API gateway;
+* `/partner-api` prefix for partner & administrative APIs -- e.g.
+`/partner-api/businesses` end service endpoint mapped to `/businesses` on
+partner API gateway;
+* `/internal` prefix for platform-internal APIs -- e.g. `/internal/businesses`
+end service endpoint for use by other services of the platform.
