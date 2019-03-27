@@ -161,10 +161,3 @@ Usage of mentioned system query options must be explicitly stated in the
 endpoint documentation. Endpoints must also document which subset of fields,
 OData's built-in filter operations & built-in query functions is supported by
 the endpoint.
-
-////
-Comments:
-Wilerson: OK
-Andrzej: OK
-Tugce: OK
-////
