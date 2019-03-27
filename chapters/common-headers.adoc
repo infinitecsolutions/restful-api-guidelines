@@ -27,10 +27,11 @@ limited to:
 * {Content-Type} indicates the media type of the body content.
 
 [#133]
-== {MAY} Use Standardized Headers
+== {MUST} Use Standardized Headers
 
-Use http://en.wikipedia.org/wiki/List_of_HTTP_header_fields[this list] and
-mention its support in your OpenAPI definition.
+Use standard header names from http://en.wikipedia.org/wiki/List_of_HTTP_header_fields[this list]
+according to their purpose. State usage of standard headers in OpenAPI
+definition.
 
 [#179]
 == {MAY} Use `Content-Location` Header
