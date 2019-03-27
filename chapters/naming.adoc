@@ -102,18 +102,18 @@ paginating, you must stick to the following naming conventions:
   a page. See <<pagination>> section below.
 
 [#X001]
-== {SHOULD} Resort to More Advanced Filtering If Needed
+== {SHOULD} Resort to More Advanced Filtering & Sorting If Needed
 
 Sometimes the default query parameter `q` mentioned in <<137>> isn't enough to
 fulfill business or technical requirements around filtering. In such cases
-assess if query-by-example using query parameters or OData's `$filter` system
-query option doesn't meet the requirements, in that order.
+assess if query-by-example using query parameters or OData doesn't meet the
+requirements.
 
 === Query-by-Example Using Query Parameters
 
-Use a query parameter for each field that should support filtering. Most of the
-fields probably do not provide such support. Therefore, document which fields
-are filterable.
+Query-by-example using query parameters works by introducing a query parameter
+for each field that should support filtering. Most of the fields probably do
+not provide such support. Therefore, document which fields are filterable.
 
 Given an example listing of the following format:
 
@@ -150,12 +150,17 @@ To support ranges in filtering use virtual fields with suffixes:
 For example, to allow filtering on `rate` field using ranges (both ends
 inclusive), introduce `rate.gte` and `rate.lte` query parameters.
 
-=== OData `$filter` System Query Option
+=== OData Filtering & Sorting
 
-For more complex queries https://www.odata.org/[OData]'s http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptionfilter[`$filter` system query option]
+:OData-Protocol: http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html
+
+For more complex queries https://www.odata.org/[OData]'s {OData-Protocol}#sec_SystemQueryOptionfilter[`$filter` system query option]
 can be used, allowing the client to restrict the set of items returned.
-Along with `$filter`, endpoints can utilize `$top` and `$skip` system query
-options.
+Along with `$filter`, endpoints can utilize {OData-Protocol}#sec_SystemQueryOptiontop[`$top`]
+and {OData-Protocol}#sec_SystemQueryOptionskip[`$skip`] system query options.
+
+{OData-Protocol}#sec_SystemQueryOptionorderby[`$orderby` system query option]
+can be used to specify desired ordering of items.
 
 Usage of mentioned system query options must be explicitly stated in the
 endpoint documentation. Endpoints must also document which subset of fields,
