@@ -152,11 +152,15 @@ inclusive), introduce `rate.gte` and `rate.lte` query parameters.
 
 === OData `$filter` System Query Option
 
-For more complex queries use the https://www.odata.org/[OData]'s http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptionfilter[`$filter` system query option]
-allowing the client to restrict the set of items returned.
+For more complex queries https://www.odata.org/[OData]'s http://docs.oasis-open.org/odata/odata/v4.01/cs01/part1-protocol/odata-v4.01-cs01-part1-protocol.html#sec_SystemQueryOptionfilter[`$filter` system query option]
+can be used, allowing the client to restrict the set of items returned.
+Along with `$filter`, endpoints can utilize `$top` and `$skip` system query
+options.
 
-Document which subset of fields, OData's built-in filter operations & built-in
-query functions is supported by the endpoint.
+Usage of mentioned system query options must be explicitly stated in the
+endpoint documentation. Endpoints must also document which subset of fields,
+OData's built-in filter operations & built-in query functions is supported by
+the endpoint.
 
 ////
 Comments:
