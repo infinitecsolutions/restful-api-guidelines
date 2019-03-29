@@ -9,7 +9,7 @@
 
 :creator: Zalando SE
 :producer: Asciidoctor
-:keywords: Zalando, Guidelines, RESTful, API, Events, Schema
+:keywords: Zalando, Guidelines, RESTful, API, Schema
 :copyright: CC-BY-SA 3.0
 
 
