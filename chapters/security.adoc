@@ -6,7 +6,7 @@
 
 Every API endpoint needs to be secured using OAuth 2.0. Please refer to
 the
-https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#security-definitions-object[official
+{OpenAPI-3-0-2}#oauth-flow-object[official
 OpenAPI spec] on how to specify security definitions in your API
 specification or take a look at the following example.
 
@@ -65,7 +65,7 @@ Some examples for standard and resource-specific permissions:
 After permission names are defined and the permission is declared in the 
 security definition at the top of an API specification, it should be assigned 
 to each API operation by specifying a
-https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#securityRequirementObject[security
+{OpenAPI-3-0-2}#security-requirement-object[security
 requirement] like this:
 
 [source,yaml]

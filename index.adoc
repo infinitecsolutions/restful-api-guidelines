@@ -38,6 +38,8 @@
 :ISO-639-1: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 :ISO-4217: https://en.wikipedia.org/wiki/ISO_4217
 
+:OpenAPI-3-0-2: https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md
+
 // Attribute to improve design of key words in titles.
 :MUST: pass:[<span class="must-keyword"><strong>Must</strong></span>:]
 :SHOULD: pass:[<span class="should-keyword"><strong>Should</strong></span>:]
