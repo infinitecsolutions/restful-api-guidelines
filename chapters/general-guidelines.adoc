@@ -7,15 +7,18 @@ The titles are marked with the corresponding labels: {MUST},
 [#100]
 == {MUST} Follow API First Principle
 
-You must follow the <<api-first, API First Principle>>, more specifically: 
+You must follow the <<api-first, API First Principle>>, more specifically:
 
-* You must define APIs first, before coding its implementation, <<101, using OpenAPI as specification language>>
-* You must design your APIs consistently with this guidelines; 
-use our https://zally.zalando.net/[API Linter Service [internal link]] for automated rule checks. 
-* You must call for early review feedback from peers and client developers, 
-and apply https://github.bus.zalan.do/ApiGuild/ApiReviewProcedure[our lightweight API
-review process [internal link]] for all component external APIs, i.e. 
-all apis with `x-api-audience =/= component-internal` (see <<219, API Audience>>). 
+* You must define APIs first, before coding its implementation,
+  <<101, using OpenAPI as specification language>>
+* You must design your APIs consistently with this guidelines;
+  use our https://zally.zalando.net/[API Linter Service [internal link]] for 
+  automated rule checks.
+* You must call for early review feedback from peers and client developers,
+  and apply our https://github.com/infinitecsolutions/dev-policies/pull/1[API review process]
+  review process [internal link]] for all component external APIs, i.e.
+  all apis with `x-api-audience =/= component-internal` (see <<219, API Audience>>).
+
 
 
 [#101]
@@ -27,7 +30,7 @@ specification files using *YAML* to improve readability. We encourage to use
 *OpenAPI 3.0* version, but still support *OpenAPI 2.0* (a.k.a. Swagger 2).
 
 The API specification files should be subject to version control using a source
-code management system - best together with the implementing sources. 
+code management system - best together with the implementing sources.
 
 You <<192, must / should publish>> the component <<219, external / internal>>
 API specification with the deployment of the implementing service, and, hence,
