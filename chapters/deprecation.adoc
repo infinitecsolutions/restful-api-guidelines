@@ -12,8 +12,9 @@ before API changes are deployed.
 [#185]
 == {MUST} Obtain Approval of Clients
 
-Before shutting down an API (or version of an API) the producer must
-make sure, that all clients have given their consent to shut down the
+Before shutting down an API that is external-public, external-partner,
+company-internal, platform-internal, or a version of such an API) the producer
+must make sure, that all clients have given their consent to shut down the
 endpoint. Producers should help consumers to migrate to a potential new
 endpoint (i.e. by providing a migration manual). After all clients are
 migrated, the producer may shut down the deprecated API.
