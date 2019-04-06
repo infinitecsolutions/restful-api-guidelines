@@ -2,7 +2,7 @@
 = API Operation
 
 [#192]
-== {MUST} Publish OpenAPI Specification
+== {MUST} Publish OpenAPI Specification --> TBD
 
 All service applications must publish OpenAPI specifications of their external
 APIs. While this is optional for internal APIs, i.e. APIs marked with the
