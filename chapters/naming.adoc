@@ -62,7 +62,7 @@ public API, and therefore should be made available under the root "/"
 base path.
 
 If the service should also support non-public, internal APIs
-— for specific operational support functions, for example — we encourage 
+— for specific operational support functions, for example — we encourage
 you to maintain two different API specifications and provide
 <<219, API audience>>. For both APIs, you should not use `/api` as base path.
 

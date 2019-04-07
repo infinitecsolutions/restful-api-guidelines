@@ -28,8 +28,8 @@ Some examples for standard and resource-specific permissions:
 | `business-partner-service` | |`read` | `business-partner-service.read`
 |=======================================================================
 
-After permission names are defined and the permission is declared in the 
-security definition at the top of an API specification, it should be assigned 
+After permission names are defined and the permission is declared in the
+security definition at the top of an API specification, it should be assigned
 to each API operation by specifying a
 {OpenAPI-3-0-2}#security-requirement-object[security
 requirement] like this:
@@ -55,7 +55,7 @@ as OAuth2 default scope.
 paths:
   /public-information:
     get:
-      summary: Provides public information about ... 
+      summary: Provides public information about ...
                Accessible by any user; no permissions needed.
       security:
         - oauth2:

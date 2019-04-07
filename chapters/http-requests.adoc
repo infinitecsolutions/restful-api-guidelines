@@ -106,7 +106,7 @@ URL"_.
 
 *Generally:* {POST} should be used for scenarios that cannot be covered by the
 other methods sufficiently. In such cases, make sure to document the fact that
-{POST} is used as a workaround (see {GET-with-Body}). 
+{POST} is used as a workaround (see {GET-with-Body}).
 
 *Note:* Resource IDs with respect to {POST} requests are created and maintained
 by server and returned with response payload.
@@ -293,7 +293,7 @@ following table showing the major properties of each pattern:
 | Applicable with                       | {PATCH} | {POST}  | {POST}/{PATCH}
 | HTTP Standard                         | {YES}   | {NO}    | {NO}
 | Prevents duplicate (zombie) resources | {YES}   | {YES}   | {NO}
-| Prevents concurrent lost updates      | {YES}   | {NO}    | {NO} 
+| Prevents concurrent lost updates      | {YES}   | {NO}    | {NO}
 | Supports safe retries                 | {YES}   | {YES}   | {YES}
 | Supports exact same response          | {NO}    | {NO}    | {YES}
 | Can be inspected (by intermediaries)  | {YES}   | {NO}    | {YES}
@@ -351,8 +351,8 @@ the escaping of special characters and the maximal URL length.
 [#226]
 == {MUST} Document Implicit Filtering
 
-Sometimes certain collection resources or queries will not list all the 
-possible elements they have, but only those for which the current client 
+Sometimes certain collection resources or queries will not list all the
+possible elements they have, but only those for which the current client
 is authorized to access.
 
 Implicit filtering could be done on:

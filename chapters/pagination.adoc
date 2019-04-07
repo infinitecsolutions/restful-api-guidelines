@@ -102,12 +102,12 @@ to an article's `authors` like that:
   "index": 0,
   "page_size": 5,
   "items": [
-    {  
+    {
       "href": "https://...",
       "id": "123e4567-e89b-12d3-a456-426655440000",
       "name": "Kent Beck"
     },
-    {  
+    {
       "href": "https://...",
       "id": "987e2343-e89b-12d3-a456-426655440000",
       "name": "Mike Beedle"

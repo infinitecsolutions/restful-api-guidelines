@@ -163,7 +163,7 @@ components:
       type: string
       required: false
       example: W/"xy", "5", "5db68c06-1a68-11e9-8341-68f728c1ba70"
-    
+
   - If-Match:
       description: |
         The RFC7232 If-Match header field in a request requires the server to
@@ -176,7 +176,7 @@ components:
       type: string
       required: false
       example: "5", "7da7a728-f910-11e6-942a-68f728c1ba70"
-    
+
   - If-None-Match:
       description: |
         The RFC7232 If-None-Match header field in a request requires the server
@@ -184,7 +184,7 @@ components:
         entity-tags. If the provided entity-tag is `*`, it is required that the
         resource does not exist at all (see [RFC 7232 Section
         3.2](https://tools.ietf.org/html/rfc7232#section-3.2).
-    
+
       type: string
       required: false
       example: "7da7a728-f910-11e6-942a-68f728c1ba70", *
