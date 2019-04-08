@@ -115,19 +115,19 @@ groups with clear organisational and legal boundaries:
   The API consumers with this audience are restricted to applications of the
   same *bounded context* which typically represents a specific *core service*
   with clear functional scope and ownership.
-  All services of a core service are owned by specific domain leads and teams.
+  All APIs of a core service are owned by specific domain leads and teams.
   Typical examples of context-internal APIs are APIs being used by internal
   helper and worker services or that support service operation.
 *platform-internal*::
   The API consumers with this audience are restricted to those that are part
-  of the platform (e.g. OS, Financial Timeline, UAM, etc.).
+  of the platform (e.g. OS, Financial Timeline, UAIM, etc.).
 *company-internal*::
   The API consumers with this audience are restricted to applications owned
   by the business units of the same the company (e.g. Zalando company with
   Zalando SE, Zalando Payments SE & Co. KG. etc.)
 *external-partner*::
   The API consumers with this audience are restricted to applications of
-  known business partners.
+  business partners.
 *external-public*::
   APIs with this audience can be accessed by anyone with Internet access.
 

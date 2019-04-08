@@ -11,15 +11,12 @@ You must follow the <<api-first, API First Principle>>, more specifically:
 
 * You must define APIs first, before coding its implementation,
   <<101, using OpenAPI as specification language>>
-* You must design your APIs consistently with this guidelines;
-  use our https://zally.zalando.net/[API Linter Service [internal link]] for 
-  automated rule checks.
+* You must design your APIs consistently with this guidelines
 * You must call for early review feedback from peers and client developers,
-  and apply our https://github.com/infinitecsolutions/dev-policies/pull/1[API review process]
-  review process [internal link]] for all component external APIs, i.e.
-  all apis with `x-api-audience =/= component-internal` (see <<219, API Audience>>).
-
-
+  and apply our
+  https://github.com/infinitecsolutions/dev-policies/pull/1[API review process]
+  for all component external APIs, i.e. all APIs with
+  `x-api-audience =/=context-internal` (see <<219, API Audience>>).
 
 [#101]
 == {MUST} Provide API Specification using OpenAPI
@@ -59,7 +56,7 @@ manual typically describes the following API aspects:
 * architecture context and major dependencies - including figures and
 sequence flows
 
-Each API with an external-public, external partner, company-internal and
+Each API with an external-public, external-partner, company-internal and
 platform-internal audience *must* prodive a user manual. APIs for other
 audiences *should* provide one.
 The user manual must be published online, e.g. via our documentation hosting platform service,
