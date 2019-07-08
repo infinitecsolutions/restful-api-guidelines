@@ -17,7 +17,7 @@ can happen via Github pull requests with temporary build artifacts, or via
 whiteboarding.
 
 Background: In our dynamic and complex service infrastructure, it is important
-to provide API client developers a central place with online access to the API
+to provide Infinitec staff a central place with online access to the API
 specifications of all running applications.
 
 [#193]
