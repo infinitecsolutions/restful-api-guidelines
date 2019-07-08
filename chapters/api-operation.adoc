@@ -4,8 +4,7 @@
 [#192]
 == {MUST} Publish OpenAPI Specification
 
-All service applications must publish OpenAPI specifications of their external
-APIs.
+All service applications must publish OpenAPI specifications of their APIs.
 
 An API is published by uploading its built **SwaggerUI** docs built from its
 **OpenAPI Specification** into Infinitec's internal documentation S3 folder,
@@ -13,7 +12,7 @@ preferrably via automated CI job. The directory structure should be
 `/apis/{REPOSITORY_NAME}/index.html`. A link to the published documentation
 must be present at the repository's README file. It is important to remember
 that the publishing process is separated from the drafting discussion, which
-can happen via Github pull requests with temporary build artifacts, or via
+can happen via GitHub pull requests with temporary build artifacts, or via
 whiteboarding.
 
 Background: In our dynamic and complex service infrastructure, it is important
