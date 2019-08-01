@@ -36,10 +36,11 @@ expected that code changes are necessary.
 
 
 [#107]
-== {SHOULD} Prefer Compatible Extensions
+== {MUST}/{SHOULD} Prefer Compatible Extensions
 
-API designers should apply the following rules to evolve RESTful APIs for
-services in a backward-compatible way:
+Following are rules to evolve RESTful APIs for services in a 
+backward-compatible way. APIs with audiences external-public and
+external-partner must follow them. Any other API should follow them.
 
 * Add only optional, never mandatory fields.
 * Never change the semantic of fields (e.g. changing the semantic from
