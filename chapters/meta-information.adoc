@@ -123,8 +123,7 @@ groups with clear organisational and legal boundaries:
   of the platform (e.g. OS, Financial Timeline, UAIM, etc.).
 *company-internal*::
   The API consumers with this audience are restricted to applications owned
-  by the business units of the same the company (e.g. Zalando company with
-  Zalando SE, Zalando Payments SE & Co. KG. etc.)
+  by the business units of the same company.
 *external-partner*::
   The API consumers with this audience are restricted to applications of
   business partners.

@@ -57,7 +57,7 @@ manual typically describes the following API aspects:
 sequence flows
 
 Each API with an external-public, external-partner, company-internal and
-platform-internal audience *must* prodive a user manual. APIs for other
+platform-internal audience *must* provide a user manual. APIs for other
 audiences *should* provide one.
 The user manual must be published online, e.g. via our documentation hosting platform service,
 GHE pages, or specific team web servers. Please do not forget to include a link to the

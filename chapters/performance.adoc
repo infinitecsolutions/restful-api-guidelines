@@ -8,12 +8,10 @@ APIs should support techniques for reducing bandwidth based on client needs.
 This holds for APIs that (might) have high payloads and/or are used in
 high-traffic scenarios like the public Internet and telecommunication networks.
 Typical examples are APIs used by mobile web app clients with (often) less
-bandwidth connectivity. (Zalando is a 'Mobile First' company, so be mindful of
-this point.)
-
+bandwidth connectivity.
 Common techniques include:
 
-* compression of request and response bodies (see <<156>>) 
+* compression of request and response bodies (see <<156>>)
 * querying field filters to retrieve a subset of resource attributes (see
   <<157>> below)
 * {ETag} and {If-Match}/{If-None-Match} headers to avoid re-fetching of
@@ -93,14 +91,14 @@ Content-Type: application/json
 }
 ----
 
-The query `field` value determines the fields returned with the response payload object. 
+The query `field` value determines the fields returned with the response payload object.
 For instance, `(name)` returns `users` root object with only the `name` field,
 and `(name,friends(name))` returns the `name` and the nested `friends`
-object with only its `name` field. 
+object with only its `name` field.
 
-OpenAPI doesn't support you in formally specifying different return object schemes 
+OpenAPI doesn't support you in formally specifying different return object schemes
 depending on a parameter. When you define the field parameter, we recommend to provide
-the following description: `Endpoint supports filtering of return object fields as 
+the following description: `Endpoint supports filtering of return object fields as
 described in [Rule #157](https://opensource.zalando.com/restful-api-guidelines/#157)`
 
 The syntax of the query `field` value is defined by the following
@@ -113,7 +111,7 @@ https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form[BNF] grammar.
 <field_items>       ::= <field> [ "," <field_items> ]
 <field>             ::= <field_name> | <fields_substruct>
 <fields_substruct>  ::= <field_name> <fields_struct>
-<field_name>        ::= <dash_letter_digit> [ <field_name> ] 
+<field_name>        ::= <dash_letter_digit> [ <field_name> ]
 <dash_letter_digit> ::= <dash> | <letter> | <digit>
 <dash>              ::= "-" | "_"
 <letter>            ::= "A" | ... | "Z" | "a" | ... | "z"

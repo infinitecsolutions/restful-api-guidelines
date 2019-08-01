@@ -86,7 +86,7 @@ Example JSON Schema:
 ----
 treeNode:
   type: object
-  properties: 
+  properties:
     id:
       description: the identifier of this node
       type: string

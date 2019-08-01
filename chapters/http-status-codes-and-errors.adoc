@@ -44,7 +44,7 @@ service client and provider performance.
 You must only use standardized HTTP status codes consistently with their
 intended semantics. You must not invent new HTTP status codes.
 
-RFC standards define ~60 different HTTP status codes with specific semantics 
+RFC standards define ~60 different HTTP status codes with specific semantics
 (mainly {RFC-7231}#section-6[RFC7231] and {RFC-6585}[RFC 6585]) — and there
 are upcoming new ones, e.g.
 https://tools.ietf.org/html/draft-tbray-http-legally-restricted-status-05[draft
@@ -214,7 +214,7 @@ should wait by setting the {Retry-After} header.
 [#220]
 == {MUST} Use Most Specific HTTP Status Codes
 
-You must use the most specific HTTP status code when returning information 
+You must use the most specific HTTP status code when returning information
 about your request processing status or error situations.
 
 [#152]

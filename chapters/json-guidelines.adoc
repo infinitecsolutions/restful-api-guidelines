@@ -1,10 +1,10 @@
 [[json-guidelines]]
 = JSON Guidelines
 
-These guidelines provides recommendations for defining JSON data at Zalando.
+These guidelines provides recommendations for defining JSON data.
 JSON here refers to {RFC-7159}[RFC 7159] (which updates {RFC-4627}[RFC 4627]),
 the "application/json" media type and custom JSON media types defined for APIs.
-The guidelines clarifies some specific cases to allow Zalando JSON data to have
+The guidelines clarifies some specific cases to allow JSON data to have
 an idiomatic form across teams and services.
 
 The first some of the following guidelines are about property names, the later
@@ -164,7 +164,7 @@ durations).
 == {MAY} Standards could be used for Language, Country and Currency
 
 * {ISO-3166-1-a2}[ISO 3166-1-alpha2 country]
-* (It's "GB", not "UK", even though "UK" has seen some use at Zalando)
+* (It's "GB", not "UK")
 * {ISO-639-1}[ISO 639-1 language code]
 * https://tools.ietf.org/html/bcp47[BCP-47] (based on {ISO-639-1}[ISO 639-1])
   for language variants
