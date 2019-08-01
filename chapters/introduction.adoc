@@ -1,7 +1,7 @@
 [[introduction]]
 = Introduction
 
-Infinitect’s software architecture centers around microservices that provide
+Infinitec’s software architecture centers around microservices that provide
 functionality via RESTful APIs with a JSON payload.  Our APIs most purely
 express what our systems do, and are therefore highly valuable business assets.
 Our promise is that we and our partners can easily build custom functionality
@@ -46,8 +46,8 @@ evolves, but teams can confidently follow and trust them.
 
 In case guidelines are changing, following rules apply:
 
-* existing APIs don't have to be changed, but we recommend it clients of
-* existing APIs have to cope with these APIs based on
+* existing APIs don't have to be changed, but we recommend it
+* clients of existing APIs have to cope with these APIs based on
   outdated rules
 * new APIs have to respect the current guidelines
 
