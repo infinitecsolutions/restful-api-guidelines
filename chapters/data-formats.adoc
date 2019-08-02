@@ -24,9 +24,9 @@ Other media types may be used in following cases:
 [#172]
 == {SHOULD} Prefer standard Media type name `application/json`
 
-Previously, this guideline allowed the use of custom media types like
-`application/x.zalando.article+json`. This usage is not recommended
-anymore and should be avoided, except where it is necessary for cases of
+Some might consider the use of custom media types like
+`application/x.infinitec.payment+json`. This usage is not recommended
+and should be avoided, except where it is necessary for cases of
 <<114,media type versioning>>. Instead, just use the standard media type name
 `application/json`.
 
