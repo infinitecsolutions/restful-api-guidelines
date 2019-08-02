@@ -99,7 +99,7 @@ object with only its `name` field.
 OpenAPI doesn't support you in formally specifying different return object schemes
 depending on a parameter. When you define the field parameter, we recommend to provide
 the following description: `Endpoint supports filtering of return object fields as
-described in [Rule #157](https://opensource.zalando.com/restful-api-guidelines/#157)`
+described in [Rule #157](https://internal-docs.nova.infinitec.solutions/api-guidelines/#157)`
 
 The syntax of the query `field` value is defined by the following
 https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form[BNF] grammar.
